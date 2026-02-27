@@ -1342,8 +1342,8 @@ body.dark-mode .stat-card-green {
     margin-bottom: 2.4rem;
 }
 
-.success-message.active {
-    display: flex;
+#success-message.active {
+    display: flex !important;
 }
 
 body.dark-mode .success-message {
