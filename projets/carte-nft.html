@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Samuel AWODUN">
+    <meta name="description" content="Carte NFT - Projet de Samuel AWODUN">
+    <title>Carte NFT - Samuel AWODUN</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/portfolio.css">
+    <style>
+        .project-page {
+            min-height: 100vh;
+            padding: 120px 2rem 6rem;
+            background: var(--color-bg);
+        }
+
+        .project-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1.2rem 2.4rem;
+            background-color: var(--color-bg-alt);
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 1.6rem;
+            transition: all 0.3s ease;
+            margin-bottom: 3rem;
+        }
+
+        .back-link:hover {
+            background-color: var(--color-primary);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        .project-header {
+            margin-bottom: 4rem;
+        }
+
+        .project-title {
+            font-size: 4.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.6rem;
+            color: var(--color-text-secondary);
+        }
+
+        .project-technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .tech-badge {
+            padding: 1rem 2rem;
+            background-color: var(--color-primary-light);
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            border-radius: 999px;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        .project-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+            margin-bottom: 6rem;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.6rem 3.2rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 1.6rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-action {
+            background-color: var(--color-primary);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary-action:hover {
+            background-color: var(--color-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary-action {
+            background-color: var(--color-bg-alt);
+            color: var(--color-text);
+            border: 2px solid var(--color-border);
+        }
+
+        .btn-secondary-action:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        .project-image-main {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 6rem;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .project-content {
+            margin-bottom: 6rem;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .content-section h2 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--color-text);
+        }
+
+        .content-section p {
+            font-size: 1.8rem;
+            line-height: 1.8;
+            margin-bottom: 1.6rem;
+            color: var(--color-text);
+        }
+
+        .content-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .content-section li {
+            font-size: 1.8rem;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+            padding-left: 3rem;
+            position: relative;
+            color: var(--color-text);
+        }
+
+        .content-section li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: bold;
+            font-size: 2rem;
+        }
+
+        .highlight-box {
+            background: var(--color-primary-light);
+            border-left: 4px solid var(--color-primary);
+            padding: 2.4rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+        }
+
+        .highlight-box p {
+            color: var(--color-text);
+            margin: 0;
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+
+        .gallery-item {
+            height: 250px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .related-projects {
+            margin-top: 8rem;
+            padding-top: 6rem;
+            border-top: 2px solid var(--color-border);
+        }
+
+        .related-projects h2 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--color-text);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .related-card {
+            background: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .related-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .related-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .related-card-content {
+            padding: 2rem;
+        }
+
+        .related-card h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        .related-card p {
+            font-size: 1.6rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 1.6rem;
+        }
+
+        @media (max-width: 767px) {
+            .project-title {
+                font-size: 3.2rem;
+            }
+
+            .project-image-main {
+                height: 300px;
+            }
+
+            .content-section h2 {
+                font-size: 2.4rem;
+            }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+<!-- Navigation -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-content">
+            <a href="../index.html" class="logo">Samuel AWODUN</a>
+
+            <nav class="nav-desktop">
+                <a href="../index.html#accueil" class="nav-link">Accueil</a>
+                <a href="../index.html#projets" class="nav-link active">Projets</a>
+                <a href="../index.html#apropos" class="nav-link">À propos</a>
+                <a href="../index.html#competences" class="nav-link">Compétences</a>
+                <a href="../index.html#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-icon" id="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <button class="burger-menu" id="burger-toggle" aria-label="Toggle menu">
+                    <div class="burger-line"></div>
+                    <div class="burger-line"></div>
+                    <div class="burger-line"></div>
+                </button>
+            </div>
+        </div>
+
+        <nav class="nav-mobile" id="mobile-nav">
+            <a href="../index.html#accueil" class="nav-link-mobile">Accueil</a>
+            <a href="../index.html#projets" class="nav-link-mobile">Projets</a>
+            <a href="../index.html#apropos" class="nav-link-mobile">À propos</a>
+            <a href="../index.html#competences" class="nav-link-mobile">Compétences</a>
+            <a href="../index.html#contact" class="nav-link-mobile">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main class="project-page">
+    <div class="project-container">
+        <a href="../index.html#projets" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Retour aux projets
+        </a>
+
+        <!-- Project Header -->
+        <div class="project-header">
+            <h1 class="project-title">Carte NFT</h1>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <span>2025</span>
+                </div>
+                <div class="meta-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Projet académique</span>
+                </div>
+                <div class="meta-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    <span>Frontend</span>
+                </div>
+            </div>
+
+            <div class="project-technologies">
+                <span class="tech-badge">HTML</span>
+                <span class="tech-badge">CSS</span>
+            </div>
+
+            <div class="project-actions">
+                <a href="https://github.com/samuel-aw" class="btn-action btn-secondary-action" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                    Code source
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Image -->
+        <img src="../img/NFT-CARD-IMG2.png" alt="Carte NFT" class="project-image-main">
+
+        <!-- Project Content -->
+        <div class="project-content">
+            <div class="content-section">
+                <h2>📋 Présentation du projet</h2>
+                <p>
+                    Ce petit projet est une carte NFT que j'ai créée en HTML et CSS. L'idée était de reproduire
+                    le style des plateformes NFT populaires comme OpenSea ou Rarible, avec un design épuré et moderne,
+                    et un rendu visuel attrayant qui attire l'œil.
+                </p>
+                <p>
+                    La carte affiche une image 3D représentant l'œuvre NFT, le nom de l'œuvre, une brève description,
+                    le prix en Ethereum (ETH), le temps restant avant la fin de l'enchère, et le nom du créateur du NFT
+                    avec son avatar.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h2>🎯 Objectifs du projet</h2>
+                <ul>
+                    <li>Reproduire fidèlement le design des cartes NFT modernes</li>
+                    <li>Créer une interface visuellement attractive et professionnelle</li>
+                    <li>Maîtriser les techniques de mise en page CSS avancées</li>
+                    <li>Implémenter des effets de survol subtils et élégants</li>
+                    <li>Assurer un rendu parfait sur tous les écrans</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <p>
+                    <strong>💡 Point d'attention :</strong> J'ai porté une attention particulière au style pour que tout soit
+                    bien centré, équilibré et agréable à regarder, avec des effets de survol et des couleurs subtiles
+                    pour une ambiance futuriste qui rappelle l'univers des NFTs.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h2>🛠️ Défis techniques</h2>
+                <ul>
+                    <li>Création d'une mise en page parfaitement équilibrée et centrée</li>
+                    <li>Gestion des ombres et des effets de profondeur pour un rendu 3D</li>
+                    <li>Implémentation d'effets hover fluides et subtils</li>
+                    <li>Choix d'une palette de couleurs cohérente avec l'univers NFT</li>
+                    <li>Optimisation du responsive pour mobile et tablette</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>✨ Fonctionnalités</h2>
+                <ul>
+                    <li>Design moderne inspiré des plateformes NFT leaders</li>
+                    <li>Affichage du prix en ETH avec icône Ethereum</li>
+                    <li>Compteur de temps restant pour l'enchère</li>
+                    <li>Avatar et nom du créateur</li>
+                    <li>Effets de survol sur l'image principale</li>
+                    <li>Palette de couleurs futuriste (bleu cyan et violet)</li>
+                    <li>Ombres portées pour un effet de profondeur</li>
+                    <li>100% responsive</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>📚 Apprentissages</h2>
+                <p>
+                    Ce projet m'a permis de consolider mes compétences en HTML et CSS, notamment :
+                </p>
+                <ul>
+                    <li>Maîtrise des Flexbox pour le positionnement</li>
+                    <li>Utilisation avancée des box-shadow et border-radius</li>
+                    <li>Création d'effets de hover avec transitions CSS</li>
+                    <li>Gestion des couleurs et création d'une ambiance visuelle cohérente</li>
+                    <li>Optimisation du code CSS pour la performance</li>
+                    <li>Respect des bonnes pratiques d'accessibilité</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>🚀 Améliorations futures</h2>
+                <p>
+                    Si je devais améliorer ce projet, j'ajouterais :
+                </p>
+                <ul>
+                    <li>Animation du compteur de temps en JavaScript</li>
+                    <li>Système de like/favoris interactif</li>
+                    <li>Modal pour afficher l'image en grand</li>
+                    <li>Historique des offres</li>
+                    <li>Connexion avec une vraie blockchain (Ethereum)</li>
+                    <li>Galerie de plusieurs NFTs avec filtres</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Related Projects -->
+        <div class="related-projects">
+            <h2>Autres projets</h2>
+            <div class="related-grid">
+                <a href="section-quatre-cartes.html" class="related-card">
+                    <img src="../img/Four-Card-Img.png" alt="Section de quatre cartes">
+                    <div class="related-card-content">
+                        <h3>Section de quatre cartes</h3>
+                        <p>Interface web avec quatre cartes présentant différentes fonctionnalités</p>
+                    </div>
+                </a>
+                <a href="trois-cartes-coorees.html" class="related-card">
+                    <img src="../img/Column-Card-Img.png" alt="Trois cartes colorées">
+                    <div class="related-card-content">
+                        <h3>Trois cartes colorées</h3>
+                        <p>Section de fiches à trois colonnes avec catégories de véhicules</p>
+                    </div>
+                </a>
+                <a href="agenda-2030.html" class="related-card">
+                    <img src="../img/Agenda-2030-img.png" alt="Agenda 2030">
+                    <div class="related-card-content">
+                        <h3>Projet Agenda 2030</h3>
+                        <p>Site WordPress sur les objectifs de développement durable</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+</button>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

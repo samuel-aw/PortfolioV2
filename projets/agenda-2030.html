@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Samuel AWODUN">
+    <meta name="description" content="Projet Agenda 2030 - Projet de Samuel AWODUN">
+    <title>Projet Agenda 2030 - Samuel AWODUN</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/portfolio.css">
+    <style>
+        .project-page {
+            min-height: 100vh;
+            padding: 120px 2rem 6rem;
+            background: var(--color-bg);
+        }
+
+        .project-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1.2rem 2.4rem;
+            background-color: var(--color-bg-alt);
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 1.6rem;
+            transition: all 0.3s ease;
+            margin-bottom: 3rem;
+        }
+
+        .back-link:hover {
+            background-color: var(--color-primary);
+            color: white;
+            transform: translateX(-5px);
+        }
+
+        .project-header {
+            margin-bottom: 4rem;
+        }
+
+        .project-title {
+            font-size: 4.8rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-size: 1.6rem;
+            color: var(--color-text-secondary);
+        }
+
+        .project-technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .tech-badge {
+            padding: 1rem 2rem;
+            background-color: var(--color-primary-light);
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+            border-radius: 999px;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        .tech-badge-wordpress {
+            background-color: rgba(33, 117, 155, 0.2);
+            color: #21759b;
+            border-color: #21759b;
+        }
+
+        .project-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.6rem;
+            margin-bottom: 6rem;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.6rem 3.2rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 1.6rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary-action {
+            background-color: var(--color-primary);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary-action:hover {
+            background-color: var(--color-primary-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .project-image-main {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 6rem;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .project-content {
+            margin-bottom: 6rem;
+        }
+
+        .content-section {
+            margin-bottom: 4rem;
+        }
+
+        .content-section h2 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--color-text);
+        }
+
+        .content-section h3 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            margin-bottom: 1.6rem;
+            margin-top: 2.4rem;
+            color: var(--color-text);
+        }
+
+        .content-section p {
+            font-size: 1.8rem;
+            line-height: 1.8;
+            margin-bottom: 1.6rem;
+            color: var(--color-text);
+        }
+
+        .content-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .content-section li {
+            font-size: 1.8rem;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+            padding-left: 3rem;
+            position: relative;
+            color: var(--color-text);
+        }
+
+        .content-section li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-primary);
+            font-weight: bold;
+            font-size: 2rem;
+        }
+
+        .highlight-box {
+            background: var(--color-primary-light);
+            border-left: 4px solid var(--color-primary);
+            padding: 2.4rem;
+            border-radius: 8px;
+            margin: 3rem 0;
+        }
+
+        .highlight-box p {
+            color: var(--color-text);
+            margin: 0;
+        }
+
+        .sdg-info {
+            background: linear-gradient(135deg, #4CAF50 0%, #2196F3 50%, #FF9800 100%);
+            padding: 3rem;
+            border-radius: 12px;
+            color: white;
+            margin: 3rem 0;
+        }
+
+        .sdg-info h3 {
+            color: white;
+            margin-bottom: 1.6rem;
+        }
+
+        .sdg-info p {
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .sdg-goals {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .sdg-goal {
+            padding: 2rem;
+            background: var(--color-bg-alt);
+            border: 2px solid var(--color-border);
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .sdg-goal:hover {
+            transform: translateY(-5px);
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .sdg-number {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sdg-goal h4 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--color-text);
+        }
+
+        .sdg-goal p {
+            font-size: 1.4rem;
+            color: var(--color-text-secondary);
+        }
+
+        .related-projects {
+            margin-top: 8rem;
+            padding-top: 6rem;
+            border-top: 2px solid var(--color-border);
+        }
+
+        .related-projects h2 {
+            font-size: 3.2rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--color-text);
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .related-card {
+            background: var(--color-bg-alt);
+            border: 1px solid var(--color-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .related-card:hover {
+            border-color: var(--color-primary);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .related-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .related-card-content {
+            padding: 2rem;
+        }
+
+        .related-card h3 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+        }
+
+        .related-card p {
+            font-size: 1.6rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 1.6rem;
+        }
+
+        @media (max-width: 767px) {
+            .project-title {
+                font-size: 3.2rem;
+            }
+
+            .project-image-main {
+                height: 300px;
+            }
+
+            .content-section h2 {
+                font-size: 2.4rem;
+            }
+
+            .content-section h3 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+<!-- Navigation -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-content">
+            <a href="../index.html" class="logo">Samuel AWODUN</a>
+
+            <nav class="nav-desktop">
+                <a href="../index.html#accueil" class="nav-link">Accueil</a>
+                <a href="../index.html#projets" class="nav-link active">Projets</a>
+                <a href="../index.html#apropos" class="nav-link">À propos</a>
+                <a href="../index.html#competences" class="nav-link">Compétences</a>
+                <a href="../index.html#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <button class="btn-icon" id="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <button class="burger-menu" id="burger-toggle" aria-label="Toggle menu">
+                    <div class="burger-line"></div>
+                    <div class="burger-line"></div>
+                    <div class="burger-line"></div>
+                </button>
+            </div>
+        </div>
+
+        <nav class="nav-mobile" id="mobile-nav">
+            <a href="../index.html#accueil" class="nav-link-mobile">Accueil</a>
+            <a href="../index.html#projets" class="nav-link-mobile">Projets</a>
+            <a href="../index.html#apropos" class="nav-link-mobile">À propos</a>
+            <a href="../index.html#competences" class="nav-link-mobile">Compétences</a>
+            <a href="../index.html#contact" class="nav-link-mobile">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<main class="project-page">
+    <div class="project-container">
+        <a href="../index.html#projets" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Retour aux projets
+        </a>
+
+        <!-- Project Header -->
+        <div class="project-header">
+            <h1 class="project-title">Projet Agenda 2030</h1>
+
+            <div class="project-meta">
+                <div class="meta-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    <span>2025</span>
+                </div>
+                <div class="meta-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span>Projet académique</span>
+                </div>
+                <div class="meta-item">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                        <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    <span>WordPress</span>
+                </div>
+            </div>
+
+            <div class="project-technologies">
+                <span class="tech-badge">HTML</span>
+                <span class="tech-badge">CSS</span>
+                <span class="tech-badge tech-badge-wordpress">WordPress</span>
+            </div>
+
+            <div class="project-actions">
+                <a href="https://agenda2030.sawodun.dev-campus.fr/" class="btn-action btn-primary-action" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    Voir la démo
+                </a>
+            </div>
+        </div>
+
+        <!-- Main Image -->
+        <img src="../img/Agenda-2030-img.png" alt="Projet Agenda 2030" class="project-image-main">
+
+        <!-- Project Content -->
+        <div class="project-content">
+            <div class="content-section">
+                <h2>📋 Présentation du projet</h2>
+                <p>
+                    Ce projet Agenda 2030 est un site web créé avec WordPress, HTML et CSS, portant sur les objectifs
+                    de développement durable (ODD) des Nations Unies. L'objectif était de sensibiliser le public aux
+                    17 objectifs de développement durable à atteindre d'ici 2030, à travers une interface claire,
+                    accessible et informative.
+                </p>
+                <p>
+                    Le site présente chacun des 17 objectifs avec des informations détaillées, des statistiques et
+                    des actions concrètes que chacun peut entreprendre pour contribuer à ces objectifs mondiaux.
+                </p>
+            </div>
+
+            <div class="sdg-info">
+                <h3>🌍 Qu'est-ce que l'Agenda 2030 ?</h3>
+                <p>
+                    L'Agenda 2030 pour le développement durable, adopté par tous les États membres de l'ONU en 2015,
+                    est un plan d'action pour la paix, la prospérité, les personnes et la planète. Il comprend
+                    17 Objectifs de Développement Durable (ODD) qui sont un appel universel à l'action pour
+                    éliminer la pauvreté, protéger la planète et garantir que tous les peuples vivent dans la paix
+                    et la prospérité d'ici 2030.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h2>🎯 Objectifs du projet</h2>
+                <ul>
+                    <li>Sensibiliser le public aux 17 objectifs de développement durable</li>
+                    <li>Présenter les informations de manière claire et accessible</li>
+                    <li>Créer une interface intuitive et facile à naviguer</li>
+                    <li>Assurer un design responsive pour tous les appareils</li>
+                    <li>Faciliter l'engagement des visiteurs avec du contenu interactif</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>🌱 Les 17 Objectifs de Développement Durable</h2>
+                <p>
+                    Voici quelques exemples des objectifs présentés sur le site :
+                </p>
+                <div class="sdg-goals">
+                    <div class="sdg-goal">
+                        <div class="sdg-number">1</div>
+                        <h4>Pas de pauvreté</h4>
+                        <p>Éliminer la pauvreté sous toutes ses formes partout dans le monde</p>
+                    </div>
+                    <div class="sdg-goal">
+                        <div class="sdg-number">7</div>
+                        <h4>Énergie propre</h4>
+                        <p>Garantir l'accès à une énergie abordable, fiable, durable et moderne</p>
+                    </div>
+                    <div class="sdg-goal">
+                        <div class="sdg-number">13</div>
+                        <h4>Mesures climatiques</h4>
+                        <p>Prendre des mesures urgentes pour lutter contre le changement climatique</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-section">
+                <h2>🛠️ Technologies utilisées</h2>
+
+                <h3>WordPress</h3>
+                <p>
+                    J'ai choisi WordPress comme CMS pour ce projet car il permet :
+                </p>
+                <ul>
+                    <li>Une gestion facile du contenu par les utilisateurs non-techniques</li>
+                    <li>Une structure modulaire avec des thèmes et plugins</li>
+                    <li>Un système de navigation intuitif</li>
+                    <li>Un référencement SEO optimisé</li>
+                    <li>Une mise à jour simple et rapide du contenu</li>
+                </ul>
+
+                <h3>HTML & CSS</h3>
+                <p>
+                    J'ai personnalisé le thème WordPress avec :
+                </p>
+                <ul>
+                    <li>HTML sémantique pour une meilleure accessibilité</li>
+                    <li>CSS personnalisé pour le design et les couleurs</li>
+                    <li>Responsive design avec media queries</li>
+                    <li>Animations et transitions fluides</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>🎨 Choix de design</h2>
+                <ul>
+                    <li>Palette de couleurs inspirée des couleurs officielles des ODD de l'ONU</li>
+                    <li>Navigation claire avec menu déroulant pour les 17 objectifs</li>
+                    <li>Cartes visuelles pour présenter chaque objectif</li>
+                    <li>Icônes officielles des ODD pour identification rapide</li>
+                    <li>Sections informatives avec statistiques et graphiques</li>
+                    <li>Call-to-action pour encourager l'engagement</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box">
+                <p>
+                    <strong>💡 Point clé :</strong> J'ai travaillé sur la structure du contenu pour rendre les informations
+                    complexes accessibles à tous, avec une hiérarchie visuelle claire et des explications simples.
+                </p>
+            </div>
+
+            <div class="content-section">
+                <h2>✨ Fonctionnalités du site</h2>
+                <ul>
+                    <li>Page d'accueil avec présentation générale de l'Agenda 2030</li>
+                    <li>17 pages dédiées, une pour chaque objectif de développement durable</li>
+                    <li>Système de navigation par catégories d'objectifs</li>
+                    <li>Galerie d'images et infographies</li>
+                    <li>Section "Agir" avec actions concrètes pour chaque objectif</li>
+                    <li>Blog pour partager des actualités sur les ODD</li>
+                    <li>Formulaire de contact pour engagement</li>
+                    <li>Partage sur réseaux sociaux</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>🎓 Défis rencontrés</h2>
+                <ul>
+                    <li>Organiser une grande quantité d'informations de manière claire</li>
+                    <li>Personnaliser le thème WordPress tout en gardant sa flexibilité</li>
+                    <li>Créer une navigation intuitive pour 17 sections différentes</li>
+                    <li>Optimiser les images et médias pour performance</li>
+                    <li>Assurer l'accessibilité pour tous les publics</li>
+                    <li>Intégrer des éléments interactifs sans plugins lourds</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>📚 Apprentissages</h2>
+                <p>
+                    Ce projet m'a permis de développer mes compétences en :
+                </p>
+                <ul>
+                    <li>Administration et personnalisation de WordPress</li>
+                    <li>Création et modification de thèmes WordPress</li>
+                    <li>Gestion de contenu structuré et hiérarchisé</li>
+                    <li>Optimisation SEO pour meilleur référencement</li>
+                    <li>Design d'interface pour contenu informatif dense</li>
+                    <li>Architecture de l'information et UX writing</li>
+                    <li>Sensibilisation aux enjeux de développement durable</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>🌍 Impact et portée</h2>
+                <p>
+                    Ce projet a une dimension éducative et sociale importante :
+                </p>
+                <ul>
+                    <li>Sensibilisation aux enjeux globaux du développement durable</li>
+                    <li>Accessibilité de l'information à un large public</li>
+                    <li>Encouragement à l'action individuelle et collective</li>
+                    <li>Ressource pédagogique pour écoles et associations</li>
+                    <li>Contribution à la diffusion des objectifs de l'ONU</li>
+                </ul>
+            </div>
+
+            <div class="content-section">
+                <h2>🚀 Améliorations futures</h2>
+                <p>
+                    Pistes pour enrichir le projet :
+                </p>
+                <ul>
+                    <li>Ajouter un quiz interactif sur les ODD</li>
+                    <li>Créer une carte interactive des initiatives locales</li>
+                    <li>Intégrer des vidéos et témoignages</li>
+                    <li>Développer une section ressources téléchargeables</li>
+                    <li>Ajouter un tableau de bord de progression des ODD</li>
+                    <li>Créer une communauté avec forum de discussion</li>
+                    <li>Multilingue pour toucher un public international</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Related Projects -->
+        <div class="related-projects">
+            <h2>Autres projets</h2>
+            <div class="related-grid">
+                <a href="carte-nft.html" class="related-card">
+                    <img src="../img/NFT-CARD-IMG2.png" alt="Carte NFT">
+                    <div class="related-card-content">
+                        <h3>Carte NFT</h3>
+                        <p>Une carte NFT moderne avec design épuré et effets de survol</p>
+                    </div>
+                </a>
+                <a href="section-quatre-cartes.html" class="related-card">
+                    <img src="../img/Four-Card-Img.png" alt="Section de quatre cartes">
+                    <div class="related-card-content">
+                        <h3>Section de quatre cartes</h3>
+                        <p>Interface web avec quatre cartes présentant différentes fonctionnalités</p>
+                    </div>
+                </a>
+                <a href="trois-cartes-coorees.html" class="related-card">
+                    <img src="../img/Column-Card-Img.png" alt="Trois cartes colorées">
+                    <div class="related-card-content">
+                        <h3>Trois cartes colorées</h3>
+                        <p>Section de fiches à trois colonnes avec catégories de véhicules</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+</button>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

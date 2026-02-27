@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Samuel AWODUN">
+    <meta name="description" content="Portfolio de Samuel AWODUN - Développeur Web et Web Mobile en formation, en recherche d'alternance">
+    <title>Samuel AWODUN - Portfolio Développeur Web</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/portfolio.css">
+</head>
+<body class="dark-mode">
+<!-- Navigation -->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header-content">
+            <!-- Logo -->
+            <button class="logo" onclick="scrollToSection('accueil')">
+                Samuel AWODUN
+            </button>
+
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <a href="#accueil" class="nav-link active" data-section="accueil">Accueil</a>
+                <a href="#projets" class="nav-link" data-section="projets">Projets</a>
+                <a href="#apropos" class="nav-link" data-section="apropos">À propos</a>
+                <a href="#competences" class="nav-link" data-section="competences">Compétences</a>
+                <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+            </nav>
+
+            <!-- Right side actions -->
+            <div class="header-actions">
+                <!-- Dark mode toggle -->
+                <button class="btn-icon" id="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+
+                <!-- Download CV button -->
+                <a href="#" class="btn-primary btn-cv-desktop">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span>CV</span>
+                </a>
+
+                <!-- Mobile menu button -->
+                <button class="burger-menu" id="burger-toggle" aria-label="Toggle menu">
+                    <div class="burger-line"></div>
+                    <div class="burger-line"></div>
+                    <div class="burger-line"></div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav class="nav-mobile" id="mobile-nav">
+            <a href="#accueil" class="nav-link-mobile" data-section="accueil">Accueil</a>
+            <a href="#projets" class="nav-link-mobile" data-section="projets">Projets</a>
+            <a href="#apropos" class="nav-link-mobile" data-section="apropos">À propos</a>
+            <a href="#competences" class="nav-link-mobile" data-section="competences">Compétences</a>
+            <a href="#contact" class="nav-link-mobile" data-section="contact">Contact</a>
+            <a href="#" class="btn-primary btn-cv-mobile" target="_blank">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                <span>Télécharger CV</span>
+            </a>
+        </nav>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main>
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-greeting">
+                    <span class="hero-emoji">👋</span>
+                    <h1 class="hero-title">
+                        Salut, je suis <span class="gradient-text">Samuel</span>
+                    </h1>
+                </div>
+
+                <p class="hero-description">
+                    Je suis un <span class="highlight">développeur en formation</span> en recherche d'une alternance,
+                    passionné par le code et l'informatique. J'aime autant concevoir l'interface utilisateur que développer
+                    la logique et les fonctionnalités du serveur.
+                </p>
+
+                <p class="hero-subdescription">
+                    Sur ce site, vous trouverez mes projets, mes expérimentations et tout ce que j'aime créer avec du code.
+                </p>
+
+                <div class="hero-buttons">
+                    <button class="btn-primary btn-large" onclick="scrollToSection('projets')">
+                        Voir mes projets
+                    </button>
+                    <button class="btn-secondary btn-large" onclick="scrollToSection('contact')">
+                        Me contacter
+                    </button>
+                </div>
+
+                <div class="hero-social">
+                    <a href="https://github.com/samuel-aw" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/samuel-awodun-arasomwan-86985a205/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="mailto:samuelawodun5@gmail.com" class="social-link" aria-label="Email" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+
+                <button class="scroll-indicator" onclick="scrollToSection('projets')" aria-label="Scroll down">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section section-white" id="projets">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Mes Projets</h2>
+                <p class="section-description">
+                    Bienvenue sur ma page Projets 👋 Ici, je partage certains de mes projets.
+                    Chaque projet m'a permis d'explorer de nouvelles idées, d'expérimenter avec la mise en page
+                    et d'améliorer mes compétences en développement front-end et back-end.
+                </p>
+            </div>
+
+            <!-- Category Filters -->
+            <div class="filters">
+                <button class="filter-btn active" data-category="all">Tous les projets</button>
+                <button class="filter-btn" data-category="frontend">Frontend</button>
+                <button class="filter-btn" data-category="wordpress">WordPress</button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid" id="projects-grid">
+                <!-- Projects will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section section-gray" id="apropos">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">À propos de moi</h2>
+                <p class="section-description">
+                    Je suis développeur, créateur et passionné d'anime, fasciné par le monde du numérique.
+                </p>
+            </div>
+
+            <div class="about-grid">
+                <!-- Left Column -->
+                <div class="about-story">
+                    <div class="about-block">
+                        <h3 class="about-subtitle">✨ À propos de moi</h3>
+                        <p class="about-text">
+                            Bonjour et bienvenue sur mon portfolio ! Je m'appelle Samuel, et je suis actuellement en formation
+                            <span class="highlight">Bac+2 Développeur Web et Web Mobile</span>.
+                            Passionné par le monde du web, j'aime comprendre comment les choses fonctionnent "sous le capot" et
+                            transformer des idées en projets concrets et utiles.
+                        </p>
+                    </div>
+
+                    <div class="about-block">
+                        <h3 class="about-subtitle">🚀 Mon objectif</h3>
+                        <p class="about-text">
+                            Je recherche actuellement une <span class="highlight">alternance</span> pour
+                            continuer à progresser en développement front-end, back-end ou full stack. Mon but est de rejoindre une équipe où
+                            je pourrais apprendre chaque jour, participer à de vrais projets et contribuer à construire des solutions performantes et bien pensées.
+                        </p>
+                    </div>
+
+                    <div class="about-block">
+                        <h3 class="about-subtitle">🤝 Quelques mots sur moi</h3>
+                        <p class="about-text">
+                            Curieux, patient et toujours prêt à apprendre, j'aime travailler sur des projets concrets et relever
+                            de nouveaux défis. Je crois qu'on apprend surtout en pratiquant — et c'est ce que j'ai envie de faire
+                            à vos côtés !
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Right Column -->
+                <div class="about-skills-overview">
+                    <h3 class="about-subtitle">💻 Mon univers</h3>
+                    <p class="about-text">
+                        Au fil de ma formation, j'ai l'occasion d'explorer toutes les facettes du développement web :
+                        de la conception graphique à la programmation côté serveur.
+                    </p>
+
+                    <div class="skill-cards">
+                        <div class="skill-card skill-card-blue">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                            <h4>Front-end</h4>
+                            <p>HTML, CSS, JavaScript, ReactJS</p>
+                        </div>
+
+                        <div class="skill-card skill-card-purple">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                <polyline points="21 15 16 10 5 21"></polyline>
+                            </svg>
+                            <h4>Design & Intégration</h4>
+                            <p>Figma, WordPress</p>
+                        </div>
+
+                        <div class="skill-card skill-card-green">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+                            </svg>
+                            <h4>Back-end</h4>
+                            <p>Node.js, PHP orienté objet, Laravel</p>
+                        </div>
+
+                        <div class="skill-card skill-card-orange">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                            </svg>
+                            <h4>Bases de données</h4>
+                            <p>SQL, MongoDB, Access, Merise</p>
+                        </div>
+                    </div>
+
+                    <div class="about-highlight">
+                        <p>
+                            <span class="highlight">Ce qui me plaît le plus ?</span> Donner vie à une application de A à Z :
+                            créer une structure solide côté serveur, faire communiquer les données, et construire une interface
+                            claire et agréable pour l'utilisateur.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="about-cta">
+                <h3>Intéressé par mon profil ?</h3>
+                <p>N'hésitez pas à me contacter pour discuter de votre projet ou d'une opportunité d'alternance.</p>
+                <div class="about-cta-buttons">
+                    <button class="btn-white" onclick="scrollToSection('contact')">Me contacter</button>
+                    <a href="https://cvdesignr.com/p/65ae43fdb56e1" target="_blank" rel="noopener noreferrer" class="btn-outline-white">Télécharger mon CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section section-white" id="competences">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Compétences</h2>
+                <p class="section-description">
+                    Mes compétences techniques acquises au fil de ma formation et de mes projets
+                </p>
+            </div>
+
+            <!-- Category Filters -->
+            <div class="filters">
+                <button class="skill-filter-btn active" data-skill-category="all">Toutes</button>
+                <button class="skill-filter-btn" data-skill-category="frontend">Front-end</button>
+                <button class="skill-filter-btn" data-skill-category="backend">Back-end</button>
+                <button class="skill-filter-btn" data-skill-category="database">Bases de données</button>
+                <button class="skill-filter-btn" data-skill-category="tools">Outils & Design</button>
+            </div>
+
+            <!-- Skills Grid -->
+            <div class="skills-grid" id="skills-grid">
+                <!-- Skills will be inserted here by JavaScript -->
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card stat-card-blue">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Années de formation</div>
+                </div>
+                <div class="stat-card stat-card-purple">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Projets réalisés</div>
+                </div>
+                <div class="stat-card stat-card-green">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label">Technologies maîtrisées</div>
+                </div>
+            </div>
+
+            <!-- Learning Quote -->
+            <div class="learning-quote">
+                <p>
+                    "Je suis constamment en train d'apprendre et d'améliorer mes compétences.
+                    Chaque projet est une opportunité de découvrir de nouvelles technologies et de
+                    perfectionner ma maîtrise du développement web."
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section section-gray" id="contact">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Contactez-moi</h2>
+                <p class="section-description">
+                    Collaborons ! N'hésitez pas à me contacter pour me parler de votre projet ou
+                    d'une opportunité d'alternance.
+                </p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Left Column - Contact Info -->
+                <div class="contact-info">
+                    <h3 class="contact-subtitle">Informations de contact</h3>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon contact-icon-blue">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="contact-label">Email</div>
+                                <a href="mailto:samuelawodun5@gmail.com" class="contact-value">samuelawodun5@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon contact-icon-blue">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="contact-label">Localisation</div>
+                                <div class="contact-value">France</div>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon contact-icon-blue">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <div class="contact-label">Disponibilité</div>
+                                <div class="contact-value">Ouvert aux opportunités</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="contact-social">
+                        <h4 class="contact-social-title">Suivez-moi</h4>
+                        <div class="contact-social-links">
+                            <a href="https://github.com/samuel-aw" target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="GitHub">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                            </a>
+                            <a href="https://www.linkedin.com/in/samuel-awodun-arasomwan-86985a205/" target="_blank" rel="noopener noreferrer" class="contact-social-link" aria-label="LinkedIn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Alternance Badge -->
+                    <div class="alternance-badge">
+                        <h4>En recherche d'alternance</h4>
+                        <p>Je suis activement à la recherche d'une alternance en développement web. Si vous avez une opportunité, n'hésitez pas à me contacter !</p>
+                        <div class="disponible-badge">
+                            <span class="pulse-dot"></span>
+                            Disponible à partir d'avril 2026
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Contact Form -->
+                <div class="contact-form-container">
+                    <h3 class="contact-subtitle">Envoyez-moi un message</h3>
+
+                    <!-- Success Message -->
+                    <div class="success-message" id="success-message">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <span>Message envoyé avec succès ! Je vous répondrai bientôt.</span>
+                    </div>
+
+                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/mwvvklvd" method="POST">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Votre nom *</label>
+                            <input type="text" id="name" name="name" class="form-input" placeholder="Jean Dupont" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Votre email *</label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="jean.dupont@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Votre message *</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="6" placeholder="Bonjour Samuel, j'aimerais discuter d'une opportunité..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit" id="submit-btn">
+                            <svg class="submit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                            <span class="submit-text">Envoyer le message</span>
+                            <span class="submit-loading">Envoi en cours...</span>
+                        </button>
+
+                        <p class="form-note">* Champs obligatoires</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <!-- Brand -->
+            <div class="footer-brand">
+                <h3>Samuel AWODUN</h3>
+                <p>Développeur en formation</p>
+                <p class="footer-status">Bac+2 • En recherche d'alternance</p>
+            </div>
+
+            <!-- Navigation -->
+            <div class="footer-nav">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="#projets" data-section="projets">Projets</a></li>
+                    <li><a href="#apropos" data-section="apropos">À propos</a></li>
+                    <li><a href="#competences" data-section="competences">Compétences</a></li>
+                    <li><a href="#contact" data-section="contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Social & Contact -->
+            <div class="footer-social">
+                <h4>Me suivre</h4>
+                <div class="footer-social-links">
+                    <a href="https://github.com/samuel-aw" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/samuel-awodun-arasomwan-86985a205/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="mailto:samuelawodun5@gmail.com" target="_blank" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+                <a href="mailto:samuelawodun5@gmail.com" class="footer-email">samuelawodun5@gmail.com</a>
+            </div>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Samuel AWODUN. Tous droits réservés.</p>
+            <button>
+                <a href="mentions-legales.html">Mentions légales</a>
+            </button>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-to-top" id="scroll-to-top" aria-label="Scroll to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+</button>
+
+<!-- Project Modal -->
+<div class="modal" id="project-modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <button class="modal-close" id="modal-close">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="modal-image">
+            <img id="modal-img" src="" alt="">
+        </div>
+        <div class="modal-body">
+            <h3 id="modal-title"></h3>
+            <p id="modal-description"></p>
+            <div class="modal-tech">
+                <h4>Technologies utilisées</h4>
+                <div id="modal-technologies"></div>
+            </div>
+            <div class="modal-actions" id="modal-actions">
+                <!-- Buttons will be inserted here -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
