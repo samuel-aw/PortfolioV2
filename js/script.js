@@ -38,6 +38,17 @@ const projectsData = [
     },
     {
         id: 4,
+        title: 'Projet Portfolio Version1',
+        description: 'Première vitrine professionnelle réalisée en HTML, CSS et JavaScript',
+        longDescription: "Ce projet est la première itération de mon portfolio professionnel. Conçu initialement dans un cadre académique, il a rapidement évolué pour devenir mon outil principal de recherche d'alternance. L'objectif était de créer une vitrine numérique minimaliste et efficace pour présenter mes premières réalisations.",
+        image: './img/portfolioV1.png',
+        technologies: ['HTML', 'CSS', 'JAVASCRIPT'],
+        category: 'frontend',
+        liveUrl: './projets/portfolio-v1.html',
+        githubUrl: 'https://github.com/samuel-aw'
+    },
+    {
+        id: 5,
         title: 'Projet Agenda 2030',
         description: 'Site WordPress sur les objectifs de développement durable',
         longDescription: "Ce projet Agenda 2030 est un site web créé avec WordPress, HTML et CSS, portant sur les objectifs de développement durable des Nations Unies. L'objectif était de sensibiliser aux 17 objectifs de développement durable à travers une interface claire et accessible. J'ai travaillé sur la structure du contenu, l'intégration WordPress et le design responsive pour assurer une expérience utilisateur optimale sur tous les appareils.",

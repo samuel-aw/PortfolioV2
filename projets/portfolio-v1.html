@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Samuel AWODUN">
-    <meta name="description" content="Section de quatre cartes - Projet de Samuel AWODUN">
-    <title>Section de quatre cartes - Samuel AWODUN</title>
+    <meta name="description" content="Carte NFT - Projet de Samuel AWODUN">
+    <title>Carte NFT - Samuel AWODUN</title>
     <link rel="stylesheet" href="../css/reset.css">
     <link rel="stylesheet" href="../css/portfolio.css">
     <style>
@@ -196,42 +196,29 @@
             margin: 0;
         }
 
-        .color-showcase {
+        .project-gallery {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin: 3rem 0;
+            margin-bottom: 6rem;
         }
 
-        .color-item {
-            padding: 3rem 2rem;
+        .gallery-item {
+            height: 250px;
             border-radius: 12px;
-            text-align: center;
-            border: 2px solid;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease;
         }
 
-        .color-cyan {
-            background: rgba(6, 182, 212, 0.1);
-            border-color: #06b6d4;
-            color: #06b6d4;
+        .gallery-item:hover {
+            transform: scale(1.05);
         }
 
-        .color-red {
-            background: rgba(239, 68, 68, 0.1);
-            border-color: #ef4444;
-            color: #ef4444;
-        }
-
-        .color-blue {
-            background: rgba(59, 130, 246, 0.1);
-            border-color: #3b82f6;
-            color: #3b82f6;
-        }
-
-        .color-orange {
-            background: rgba(249, 115, 22, 0.1);
-            border-color: #f97316;
-            color: #f97316;
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .related-projects {
@@ -368,7 +355,7 @@
 
         <!-- Project Header -->
         <div class="project-header">
-            <h1 class="project-title">Section de quatre cartes</h1>
+            <h1 class="project-title">Projet Portfolio Version1</h1>
 
             <div class="project-meta">
                 <div class="meta-item">
@@ -385,7 +372,7 @@
                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                         <circle cx="12" cy="7" r="4"></circle>
                     </svg>
-                    <span>Projet académique</span>
+                    <span>Projet académique/personnel</span>
                 </div>
                 <div class="meta-item">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -399,9 +386,18 @@
             <div class="project-technologies">
                 <span class="tech-badge">HTML</span>
                 <span class="tech-badge">CSS</span>
+                <span class="tech-badge">JAVASCRIPT</span>
             </div>
 
             <div class="project-actions">
+                <a href="https://samuel-aw.github.io/Projet-Portfolio/" class="btn-action btn-primary-action" target="_blank">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                        <polyline points="15 3 21 3 21 9"></polyline>
+                        <line x1="10" y1="14" x2="21" y2="3"></line>
+                    </svg>
+                    Voir la démo
+                </a>
                 <a href="https://github.com/samuel-aw" class="btn-action btn-secondary-action" target="_blank">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
@@ -412,124 +408,88 @@
         </div>
 
         <!-- Main Image -->
-        <img src="../img/Four-Card-Img.png" alt="Section de quatre cartes" class="project-image-main">
+        <img src="../img/portfolioV1.png" alt="Carte NFT" class="project-image-main">
 
         <!-- Project Content -->
         <div class="project-content">
             <div class="content-section">
                 <h2>📋 Présentation du projet</h2>
                 <p>
-                    Ce projet est une section d'interface web que j'ai créée en HTML et CSS. L'objectif était de concevoir
-                    une mise en page claire et équilibrée, composée de quatre cartes présentant différentes fonctionnalités
-                    d'un service imaginaire.
+                    Ce projet est la première itération de mon portfolio professionnel. Conçu initialement dans un cadre académique,
+                    il a rapidement évolué pour devenir mon outil principal de recherche d'alternance. L'objectif était de créer
+                    une vitrine numérique minimaliste et efficace pour présenter mes premières réalisations.
                 </p>
                 <p>
-                    Chaque carte possède son propre style et une bordure de couleur unique pour les différencier visuellement,
-                    tout en maintenant une harmonie d'ensemble. Le design privilégie la simplicité, la lisibilité et la
-                    hiérarchie visuelle.
+                    Le design repose sur un thème sombre (Dark Mode) avec une typographie soignée, mettant l'accent sur la clarté
+                    du code et une navigation fluide pour les recruteurs.
                 </p>
             </div>
 
             <div class="content-section">
                 <h2>🎯 Objectifs du projet</h2>
                 <ul>
-                    <li>Créer une mise en page équilibrée avec CSS Grid</li>
-                    <li>Différencier visuellement chaque carte avec des couleurs distinctes</li>
-                    <li>Assurer la lisibilité du contenu</li>
-                    <li>Créer une hiérarchie visuelle claire</li>
-                    <li>Rendre l'interface responsive pour tous les écrans</li>
+                    <li>Concevoir une identité visuelle professionnelle et épurée</li>
+                    <li>Développer une interface "Mobile First" totalement fonctionnelle</li>
+                    <li>Mettre en avant mes projets et compétences de manière structurée</li>
+                    <li>Créer un pont direct avec les recruteurs via un formulaire de contact</li>
+                    <li>Optimiser le SEO de base et l'accessibilité</li>
                 </ul>
             </div>
 
             <div class="highlight-box">
                 <p>
-                    <strong>💡 Concept :</strong> Les quatre cartes représentent les fonctionnalités principales d'un service :
-                    Superviseur (cyan), Team Builder (rouge), Calculateur (bleu), et Karma (orange). Chaque carte est identifiée
-                    par sa couleur de bordure supérieure.
+                    <strong>💡 Point d'attention :</strong> Une attention particulière a été portée à l'expérience utilisateur (UX) sur mobile, notamment avec le développement sur mesure d'un menu burger accessible, respectant les standards ARIA.
                 </p>
-            </div>
-
-            <div class="content-section">
-                <h2>🎨 Palette de couleurs</h2>
-                <p>
-                    J'ai choisi une palette de couleurs vibrantes pour différencier chaque fonctionnalité :
-                </p>
-                <div class="color-showcase">
-                    <div class="color-item color-cyan">
-                        <h3>Cyan</h3>
-                        <p>#06b6d4</p>
-                        <p>Superviseur</p>
-                    </div>
-                    <div class="color-item color-red">
-                        <h3>Rouge</h3>
-                        <p>#ef4444</p>
-                        <p>Team Builder</p>
-                    </div>
-                    <div class="color-item color-blue">
-                        <h3>Bleu</h3>
-                        <p>#3b82f6</p>
-                        <p>Calculateur</p>
-                    </div>
-                    <div class="color-item color-orange">
-                        <h3>Orange</h3>
-                        <p>#f97316</p>
-                        <p>Karma</p>
-                    </div>
-                </div>
             </div>
 
             <div class="content-section">
                 <h2>🛠️ Défis techniques</h2>
                 <ul>
-                    <li>Mise en page complexe avec CSS Grid pour un positionnement asymétrique</li>
-                    <li>Gestion de la hiérarchie visuelle avec tailles et espacements</li>
-                    <li>Création d'un système de couleurs cohérent</li>
-                    <li>Adaptation responsive sur mobile avec passage en colonne simple</li>
-                    <li>Équilibrage des espaces blancs pour une lecture agréable</li>
+                    <li>Gestion du responsive design sans frameworks (Pure CSS)</li>
+                    <li>Implémentation d'une logique JavaScript pour la navigation mobile</li>
+                    <li>Résolution de conflits de spécificité CSS pour le menu interactif</li>
+                    <li>Mise en place d'un système de grille cohérent pour la galerie de projets</li>
+                    <li>Optimisation des performances de chargement des polices personnalisées</li>
                 </ul>
             </div>
 
             <div class="content-section">
                 <h2>✨ Fonctionnalités</h2>
                 <ul>
-                    <li>4 cartes avec designs individualisés</li>
-                    <li>Bordures colorées pour identification rapide</li>
-                    <li>Icônes illustrant chaque fonctionnalité</li>
-                    <li>Titres et descriptions clairs</li>
-                    <li>Ombres portées subtiles pour profondeur</li>
-                    <li>Layout Grid asymétrique moderne</li>
-                    <li>Design 100% responsive</li>
-                    <li>Transitions douces sur hover</li>
+                    <li>Navigation responsive avec menu burger animé</li>
+                    <li>Filtrage visuel des projets par catégories</li>
+                    <li>Formulaire de contact intégré et stylisé</li>
+                    <li>Transitions fluides lors de la navigation</li>
+                    <li>Gestion des attributs d'accessibilité (Aria-expanded, Hidden)</li>
+                    <li>Section "À propos" détaillée avec intégration de CV</li>
                 </ul>
             </div>
 
             <div class="content-section">
                 <h2>📚 Apprentissages</h2>
                 <p>
-                    Ce projet m'a permis de progresser sur plusieurs aspects :
+                    Ce projet a été un pilier dans ma progression en tant que développeur Front-End :
                 </p>
                 <ul>
-                    <li>Maîtrise approfondie de CSS Grid</li>
-                    <li>Création de layouts asymétriques équilibrés</li>
-                    <li>Gestion d'une palette de couleurs multiples</li>
-                    <li>Optimisation de la lisibilité avec hiérarchie visuelle</li>
-                    <li>Responsive design avec media queries</li>
-                    <li>Organisation du code CSS de manière modulaire</li>
+                    <li>Approfondissement des concepts avancés de Flexbox et CSS Grid</li>
+                    <li>Manipulation du DOM avec JavaScript pour l'interactivité utilisateur</li>
+                    <li>Compréhension des enjeux d'accessibilité (A11y)</li>
+                    <li>Méthodologie de debugging rigoureuse via les outils de développement navigateur</li>
+                    <li>Apprentissage de l'organisation d'un projet web de A à Z</li>
                 </ul>
             </div>
 
             <div class="content-section">
                 <h2>🚀 Améliorations futures</h2>
                 <p>
-                    Pistes d'évolution possibles pour ce projet :
+                    Le passage à la version 2 m'a permis d'identifier ces axes d'amélioration :
                 </p>
                 <ul>
-                    <li>Ajouter des animations au scroll</li>
-                    <li>Rendre les cartes interactives (flip, expand)</li>
-                    <li>Ajouter des statistiques ou graphiques dans chaque carte</li>
-                    <li>Créer un système de filtrage des cartes</li>
-                    <li>Ajouter des icônes personnalisées en SVG</li>
-                    <li>Implémenter un mode sombre</li>
+                    <li>Utilisation de composants réutilisables (React ou Vue.js)</li>
+                    <li>Ajout d'animations plus complexes avec des bibliothèques comme Framer Motion</li>
+                    <li>Mise en place d'un mode clair/sombre automatique</li>
+                    <li>Optimisation plus poussée du score Lighthouse (SEO & Performance)</li>
+                    <li>Intégration d'un backend pour la gestion dynamique des projets</li>
                 </ul>
             </div>
         </div>
@@ -545,18 +505,18 @@
                         <p>Une carte NFT moderne avec design épuré et effets de survol</p>
                     </div>
                 </a>
+                <a href="section-quatre-cartes.html" class="related-card">
+                    <img src="../img/Four-Card-Img.png" alt="Section de quatre cartes">
+                    <div class="related-card-content">
+                        <h3>Section de quatre cartes</h3>
+                        <p>Interface web avec quatre cartes présentant différentes fonctionnalités</p>
+                    </div>
+                </a>
                 <a href="trois-cartes-coorees.html" class="related-card">
                     <img src="../img/Column-Card-Img.png" alt="Trois cartes colorées">
                     <div class="related-card-content">
                         <h3>Trois cartes colorées</h3>
                         <p>Section de fiches à trois colonnes avec catégories de véhicules</p>
-                    </div>
-                </a>
-                <a href="portfolio-v1.html" class="related-card">
-                    <img src="../img/portfolioV1.png" alt="Portfolio Version 1">
-                    <div class="related-card-content">
-                        <h3>Projet Portfolio V1</h3>
-                        <p>Première vitrine professionnelle réalisée en HTML, CSS et JavaScript</p>
                     </div>
                 </a>
                 <a href="agenda-2030.html" class="related-card">
